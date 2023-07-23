@@ -1,0 +1,22 @@
+<section *ngIf="!loggedInUser" class="logout">
+  <div class="img-container">
+    <img src="./assets/welcomeimg.png" alt="pepe welcoming" />
+  </div>
+  <section>
+    <button (click)="handleNavigateToLogIn()" class="log-btn">Log In</button>
+    <button (click)="handleNavigateToRegister()" class="reg-btn">Register</button>
+  </section>
+</section>
+
+<section *ngIf="loggedInUser" class="login">
+  <section class="user-profile">
+    <h1>WELCOME TO THE FUN {{loggedInUser.userConnected.user.userName?.toUpperCase()}} </h1>
+
+    <img src={{loggedInUser.userConnected.user.avatar?.url}} alt="" />
+  </section>
+  <section class="buttons">
+    <button (click)="handleNavigateToPost()">Go to see all memes</button>
+    <button (click)="handleNavigateToCreate()">Create a meme</button>
+    <button (click)="handleNavigateToFavorites()">Go To Favorites</button>
+  </section>
+</section>

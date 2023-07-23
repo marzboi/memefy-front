@@ -1,0 +1,148 @@
+.loading {
+  text-align: center;
+  padding: 5rem 0;
+
+  h2 {
+    padding-top: 1rem;
+    font-weight: bold;
+    color: white;
+    font-size: 22px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  margin: 30px auto;
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    align-items: center;
+  }
+
+  .categories {
+    button {
+      all: unset;
+      cursor: pointer;
+      margin: 10px;
+      padding: 10px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 20px;
+      background-color: #0e3ff2;
+      color: #fff;
+    }
+
+    button:hover {
+      background-color: #fff;
+      color: #0e3ff2;
+    }
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    margin-bottom: 4rem;
+
+    .user {
+      display: flex;
+      padding: 15px;
+
+      img {
+        border-radius: 50%;
+        width: 15%;
+        border: #fff 2px solid;
+      }
+      p {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        margin-left: 20px;
+      }
+    }
+
+    a {
+      display: flex;
+      @media (max-width: 1200px) {
+        justify-content: space-around;
+      }
+
+      img {
+        margin: 25px 0;
+        border: 2px solid #fff;
+        border-radius: 15px;
+        width: 80%;
+      }
+    }
+
+    p {
+      padding: 15px;
+      font-size: 18px;
+    }
+  }
+
+  .nav {
+    button {
+      all: unset;
+      cursor: pointer;
+      margin: 10px;
+      padding: 10px 30px;
+      font-family: inherit;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 20px;
+      border: 2px solid #0e3ff2;
+      background-color: #fff;
+      color: #0e3ff2;
+    }
+
+    button:hover {
+      background-color: #0e3ff2;
+      color: #fff;
+    }
+  }
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #fff;
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px 0;
+  }
+  h3 {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 20px 0;
+  }
+
+  button {
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px 30px;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+  }
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  padding: 0 5em 0 8em;
+  @media (max-width: 1200px) {
+    padding: 0;
+    flex-direction: column;
+  }
+}

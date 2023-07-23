@@ -1,0 +1,35 @@
+<div class="icon-button">
+  <img src="assets/user-icon.png" alt="menu icon" (click)="deployMenu()" *ngIf="!loggedInUser" width="45" height="45">
+  <img src={{loggedInUser.userConnected.user.avatar?.url}} alt="" (click)="deployMenu()" *ngIf="loggedInUser" width="45"
+    height="45">
+</div>
+
+<nav class="nav" [ngClass]="{'deployed': isMenuDeployed}">
+  <div class="close-button">
+    <img src="assets/close-menu.png" alt="close icon" (click)="deployMenu()">
+  </div>
+  <ul *ngIf="loggedInUser">
+    <li>
+      <span>Welcome {{loggedInUser.userConnected.user.userName}}!</span>
+    </li>
+    <li>
+      <p (click)="goToFavorites(); deployMenu()">Favorites</p>
+    </li>
+    <li>
+      <p (click)="goToCreatePost(); deployMenu()">Create a Post</p>
+    </li>
+    <li>
+      <p (click)="handleLogout(); deployMenu()">Log out?</p>
+    </li>
+
+  </ul>
+
+  <ul *ngIf="!loggedInUser">
+    <li>
+      <span>Welcome in!</span>
+    </li>
+    <li>
+      <p (click)="goToLogin(); deployMenu()">Login</p>
+    </li>
+  </ul>
+</nav>

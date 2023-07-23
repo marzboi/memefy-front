@@ -1,0 +1,26 @@
+<section class="loading" *ngIf="isLoading">
+  <img src="assets/dance.gif" alt="a pepe dancing" width="300">
+  <h2>Creating...</h2>
+</section>
+
+<div class="container" *ngIf="!isLoading">
+  <h2>Publish your own!</h2>
+  <form [formGroup]="create" (ngSubmit)="handleSubmit()">
+    <label for="description">Description</label>
+    <input type="text" id="description" formControlName="description" required class="field">
+    <label for="image">Image</label>
+    <input type="file" id="image" (change)="onFileChange($event)" class="field">
+    <label for="flair">Flair</label>
+    <div class="radios">
+      <div>
+        <input type="radio" id="funny" name="flair" formControlName="flair" value="funny">
+        <label for="funny">Funny</label><br>
+      </div>
+      <div>
+        <input type="radio" name="flair" id="mean" formControlName="flair" value="mean">
+        <label for="mean">Mean</label><br>
+      </div>
+    </div>
+    <button type="submit">Create</button>
+  </form>
+</div>

@@ -1,0 +1,36 @@
+<section class="loading" *ngIf="isLoading">
+  <img src="assets/pepe-dence.gif" alt="a pepe dancing" width="300">
+  <h2>Loading...</h2>
+</section>
+
+<section class="container" *ngIf="!isLoading && favoritePosts && favoritePosts.length > 0">
+  <h2>Your favorites</h2>
+
+  <ul>
+    <li *ngFor="let post of favoritePosts" class="card">
+
+      <div class="user">
+        <img src="{{post.owner.avatar.url}}" alt="{{post.owner.avatar.url}}">
+        <p>@{{post.owner.userName}}</p>
+      </div>
+
+      <p>{{post.description}}</p>
+
+      <div class="memes">
+        <img src={{post.image.url}} alt={{post.description}}>
+      </div>
+
+      <div class="remove">
+        <button (click)="handleRemoveFavorite(post, post.id)">Remove</button>
+      </div>
+
+    </li>
+  </ul>
+</section>
+
+<section class="empty" *ngIf="!isLoading && (!favoritePosts || favoritePosts.length === 0)">
+
+  <h2>There are not favorites yet.</h2>
+  <h3>Search your favorites!</h3>
+
+</section>

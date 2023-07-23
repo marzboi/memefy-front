@@ -1,0 +1,102 @@
+.logout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      padding: 40px;
+      width: 65%;
+      height: auto;
+    }
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+
+    button {
+      cursor: pointer;
+      margin: 10px;
+      padding: 10px 30px;
+      font-family: inherit;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 20px;
+    }
+
+    .log-btn {
+      border: 2px solid #0e3ff2;
+      background-color: #0e3ff2;
+      color: #fff;
+    }
+
+    .log-btn:hover {
+      background-color: #fff;
+      color: #0e3ff2;
+    }
+
+    .reg-btn {
+      border: 2px solid #0e3ff2;
+      background-color: #fff;
+      color: #0e3ff2;
+    }
+    .reg-btn:hover {
+      background-color: #0e3ff2;
+      color: #fff;
+    }
+  }
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .user-profile {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      font-size: 28px;
+      color: #fff;
+      padding: 50px 0;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    img {
+      border-radius: 10px;
+      border: 3px solid #fff;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    button {
+      cursor: pointer;
+      margin: 10px;
+      padding: 10px 20px;
+      font-family: inherit;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 20px;
+      border: 2px solid #0e3ff2;
+      background-color: #0e3ff2;
+      color: #fff;
+    }
+    button:hover {
+      background-color: #fff;
+      color: #0e3ff2;
+    }
+  }
+}

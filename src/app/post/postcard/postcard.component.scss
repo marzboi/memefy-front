@@ -1,0 +1,152 @@
+.loading {
+  text-align: center;
+  padding: 5rem 0;
+
+  h2 {
+    padding-top: 1rem;
+    font-weight: bold;
+    color: white;
+    font-size: 22px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  margin: 30px auto;
+
+  .user-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .user {
+      display: flex;
+      padding: 20px;
+      justify-self: center;
+
+      img {
+        border-radius: 50%;
+        width: 15%;
+        border: #fff 2px solid;
+      }
+
+      p {
+        display: flex;
+        align-items: center;
+        margin: 20px;
+        font-weight: bold;
+      }
+    }
+
+    .description {
+      font-size: 18px;
+      padding: 20px;
+    }
+
+    .meme {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      img {
+        margin: 25px 0;
+        border: 2px solid #fff;
+        border-radius: 15px;
+        width: 90%;
+      }
+    }
+
+    .icons {
+      display: flex;
+      justify-content: center;
+      margin: 0 25px;
+      fa-icon {
+        padding: 10px;
+        background-color: #0e3ff2;
+        border-radius: 50%;
+        margin: 0 10px;
+      }
+    }
+
+    .comments {
+      li {
+        margin: 25px 0;
+        padding: 10px;
+        border-radius: 20px;
+        border: #fff 2px solid;
+      }
+      .user-comment {
+        display: flex;
+        align-items: center;
+        img {
+          border-radius: 50%;
+          width: 10%;
+          border: #fff 2px solid;
+        }
+
+        p {
+          display: flex;
+          align-items: center;
+          margin: 20px;
+          font-weight: bold;
+        }
+      }
+
+      .text-comment {
+        padding: 20px;
+        font-size: 18px;
+      }
+    }
+
+    .add-comments {
+      display: flex;
+      justify-content: center;
+      margin: 25px 0;
+
+      label {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+        font-weight: bold;
+      }
+
+      input {
+        padding: 10px;
+        border-radius: 15px;
+        border: 2px solid #0e3ff2;
+        background-color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      button {
+        margin: 0 5px;
+        padding: 10px 10px;
+        border-radius: 15px;
+        border: 2px solid #0e3ff2;
+        background-color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+
+  button {
+    margin: 0 5px;
+    padding: 10px 10px;
+    border-radius: 15px;
+    border: 2px solid #0e3ff2;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,60 @@
+.nav {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 30%;
+  width: 160px;
+  background-color: #333;
+
+  .close-button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    padding: 10px;
+
+    img {
+      cursor: pointer;
+      width: 40%;
+      height: auto;
+      transform: scaleX(-1);
+    }
+  }
+
+  ul {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    li {
+      padding: 10px;
+
+      p,
+      span {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+      }
+
+      p:hover {
+        color: #ccc;
+      }
+    }
+  }
+}
+
+.deployed {
+  transform: translateX(0);
+}
+
+.icon-button {
+  img {
+    cursor: pointer;
+    border-radius: 50%;
+  }
+}

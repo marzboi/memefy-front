@@ -1,0 +1,37 @@
+p {
+  font-size: 18px;
+  background-color: #0e3ff2;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  20%,
+  80% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+}
+
+.visible {
+  animation: fadeInOut 33s ease-out;
+  display: block;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 50%;
+}

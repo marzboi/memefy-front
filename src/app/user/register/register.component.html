@@ -1,0 +1,28 @@
+<section class="loading" *ngIf="isLoading">
+  <img src="assets/michi.gif" alt="a pepe dancing" width="300">
+  <h2>Processing...</h2>
+</section>
+
+<div *ngIf="!isLoading" class="container">
+  <form [formGroup]="register" (ngSubmit)="handleSubmit()">
+    <div>
+      <label for="userName">Username</label>
+      <input type="text" id="userName" formControlName="userName" required autocomplete="off">
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="text" id="email" formControlName="email" required autocomplete="off">
+    </div>
+    <div>
+      <label for="passwd">Password</label>
+      <input type="password" id="passwd" formControlName="passwd" autocomplete="off">
+    </div>
+    <div>
+      <label for="avatar">Avatar</label>
+      <input type="file" id="avatar" (change)="onFileChange($event)">
+    </div>
+    <div>
+      <button type="submit">Register</button>
+    </div>
+  </form>
+</div>

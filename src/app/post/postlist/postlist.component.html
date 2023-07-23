@@ -1,0 +1,38 @@
+<section class="loading" *ngIf="isLoading">
+  <img src="assets/pepe-dence.gif" alt="a pepe dancing" width="300">
+  <h2>Loading...</h2>
+</section>
+
+<section class="container" *ngIf="!isLoading && postArray && postArray.length > 0">
+  <h2>Explore by category</h2>
+
+  <div class="categories">
+    <button (click)="LoadAllPost()"><fa-icon [icon]="faBong"></fa-icon> All</button>
+    <button (click)="handleLoadFlair('funny')"><fa-icon [icon]="faFaceAwesome"></fa-icon> Funny</button>
+    <button (click)="handleLoadFlair('mean')"><fa-icon [icon]="faFaceAngry"></fa-icon> Mean</button>
+  </div>
+
+  <ul>
+    <li *ngFor="let post of service.allPost$ | async" class="card">
+      <div class="user">
+        <img src="{{post.owner.avatar.url}}" alt="{{post.owner.avatar.url}}">
+        <p>@{{post.owner.userName}}</p>
+      </div>
+      <p>{{post.description}}</p>
+      <a [routerLink]="post.id">
+        <img src={{post.image.url}} alt={{post.description}}>
+      </a>
+    </li>
+  </ul>
+
+  <div class="nav">
+    <button *ngIf="previusUrl !== null" (click)="handleLoadNextOrPrevious(previusUrl)">previous</button>
+    <button *ngIf="nextUrl !== null" (click)="handleLoadNextOrPrevious(nextUrl)">next</button>
+  </div>
+</section>
+
+<section class="empty" *ngIf="!isLoading && (!postArray || postArray.length === 0)">
+  <h2>There are no posts yet.</h2>
+  <h3>Be the first to post!</h3>
+  <button (click)="handleNavigateHome()"><fa-icon [icon]="faFaceAngry"></fa-icon> Return Home</button>
+</section>

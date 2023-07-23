@@ -1,0 +1,53 @@
+<section class="loading" *ngIf="isLoading">
+  <img src="assets/pepe-dence.gif" alt="a pepe dancing" width="300">
+  <h2>Loading...</h2>
+</section>
+
+<section class="container" *ngIf="!isLoading">
+  <div class="user-post">
+
+    <div class="user">
+      <img src="{{post?.owner?.avatar?.url}}" alt="">
+      <p>@{{post?.owner?.userName}}</p>
+    </div>
+
+    <p class="description">{{post?.description}}</p>
+
+    <div class="meme">
+      <img src={{post?.image?.url}} alt={{post?.description}} class="post">
+    </div>
+
+    <div class="icons" *ngIf="loggedInUser">
+      <fa-icon *ngIf="loggedInUser.userConnected.user.id === post?.owner?.id" [icon]="faTrash"
+        (click)="deletePost()"></fa-icon>
+      <fa-icon *ngIf="loggedInUser.userConnected.user.id === post?.owner?.id" [icon]="faPencil"
+        (click)="handleEditPost()"></fa-icon>
+      <fa-icon [icon]="faHeart" (click)="handleAddToFavorites()"></fa-icon>
+    </div>
+
+    <div class="comments">
+      <ul *ngFor="let comments of post?.comments">
+        <li>
+          <div class="user-comment">
+            <img src="{{comments?.owner?.avatar?.url}}" alt="">
+            <p>@{{comments?.owner?.userName}}</p>
+          </div>
+          <p class="text-comment">{{comments?.comment}}</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="add-comments" *ngIf="loggedInUser">
+      <form [formGroup]="comment" (ngSubmit)="handleAddComment()">
+        <label for="comment">Post a Reply</label><br>
+        <input type="text" placeholder="Add a comment..." id="comment" formControlName="comment">
+        <button>Add</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<section class="buttons" *ngIf="!isLoading">
+  <button (click)="handleReturntoPosts()">Go Back</button>
+</section>
